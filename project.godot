@@ -11,5 +11,6 @@ config_version=5
 [application]
 
 config/name="Colab"
+run/main_scene="uid://dd0wg8mmv4pxk"
 config/features=PackedStringArray("4.4", "Forward Plus")
 config/icon="res://icon.svg"
