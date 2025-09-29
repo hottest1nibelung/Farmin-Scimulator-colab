@@ -1,19 +1,38 @@
-[gd_scene load_steps=2 format=3 uid="uid://dd0wg8mmv4pxk"]
+[gd_scene load_steps=6 format=3 uid="uid://dd0wg8mmv4pxk"]
 
-[ext_resource type="PackedScene" uid="uid://d2648gkn2mp22" path="res://scenes/player.tscn" id="1_08ddc"]
+[ext_resource type="PackedScene" uid="uid://dq1u27t2epby3" path="res://scenes/player.tscn" id="1_08ddc"]
+[ext_resource type="Texture2D" uid="uid://c71mvs1fsqkio" path="res://scenes/black-rough-background.jpg" id="1_2206x"]
+[ext_resource type="Script" uid="uid://b5fcufvt40154" path="res://scenes/ferma_main.gd" id="1_wt6dp"]
+
+[sub_resource type="Gradient" id="Gradient_wt6dp"]
+colors = PackedColorArray(1, 1, 1, 1, 0, 0, 0, 1)
+
+[sub_resource type="GradientTexture2D" id="GradientTexture2D_unigc"]
+gradient = SubResource("Gradient_wt6dp")
+width = 500
+height = 500
+fill = 1
+fill_from = Vector2(0.5, 0.5)
+fill_to = Vector2(0.87156, 0.123853)
 
 [node name="Ferma Main" type="Node2D"]
+script = ExtResource("1_wt6dp")
 
-[node name="CharacterBody2D" type="CharacterBody2D" parent="."]
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="CharacterBody2D"]
+[node name="Black-rough-background" type="Sprite2D" parent="."]
+position = Vector2(-19, 66)
+texture = ExtResource("1_2206x")
 
 [node name="Camera2D" type="Camera2D" parent="."]
 
-[node name="PointLight2D" type="PointLight2D" parent="."]
-
 [node name="Player" parent="." instance=ExtResource("1_08ddc")]
-position = Vector2(-171, -242)
+position = Vector2(-257, -189)
 
 [node name="Player2" parent="." instance=ExtResource("1_08ddc")]
 position = Vector2(164, -110)
+
+[node name="PointLight2D" type="PointLight2D" parent="."]
+position = Vector2(-49, -91)
+color = Color(0.984222, 0.430878, 0.732492, 1)
+energy = 6.97
+shadow_enabled = true
+texture = SubResource("GradientTexture2D_unigc")
