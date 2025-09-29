@@ -36,3 +36,6 @@ color = Color(0.984222, 0.430878, 0.732492, 1)
 energy = 6.97
 shadow_enabled = true
 texture = SubResource("GradientTexture2D_unigc")
+
+[node name="CanvasModulate" type="CanvasModulate" parent="."]
+color = Color(0.344076, 0.344076, 0.344076, 1)
